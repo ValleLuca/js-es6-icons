@@ -113,21 +113,9 @@ const icone = [
 	}
 ];
 
-const selezione = document.getElementById("fxtipo");
-selezione.addEventListener("change", myfunction);
+let container = document.getElementById("container-box");				//Preso contenitore dal dom per poter inserire sucessivamente box al suo interno
 
-
-
-function myfunction() {
-	let dato = selezione.value;
-	console.log(dato);
-};
-
-
-
-let container = document.getElementById("container-box");
-
-icone.forEach((elemento) => {
+icone.forEach((elemento) => {											//Stampa su dom box con icone colorate e testo
 	container.innerHTML +=`
 	<div class="col ${elemento.type}">
 		<div class="d-flex text-center align-items-center flex-column p-2">
@@ -138,6 +126,63 @@ icone.forEach((elemento) => {
     `;
 });
 
-/*
+const selezione = document.getElementById("fxtipo");					//Preso id select per ottenere selezione di ricerca da parte dell'utente
+selezione.addEventListener("change", myfunction);						//Aggiunto addEventListener per poter far scattare un'azione al cambio del menu da parte dell'utente
 
-*/
+const animaliArr = icone.filter((element) =>  element.type == "animal");
+const vegetableArr = icone.filter((element) =>  element.type == "vegetable");
+const userArr = icone.filter((element) =>  element.type == "user");
+/*console.log(animaliArr.value);
+console.log(vegetableArr.type);
+console.log(userArr.type);*/
+
+
+
+function myfunction() {
+	let dato = selezione.value;
+	console.log(dato);
+	console.log(animaliArr.type);
+	if(dato == "animal")
+	{
+		animaliArr.forEach((elemento) => {											
+			container.innerHTML +=`
+			<div class="col ${elemento.type}">
+				<div class="d-flex text-center align-items-center flex-column p-2">
+					<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
+					<p>${elemento.name}</p>
+				</div>
+			</div>
+			`;
+		});
+	}
+	elseif(dato == "vegetable")																		//questo maledetto di da sempre errore "Uncaught ReferenceError: elseif is not defined"
+	{
+		vegetableArr.forEach((elemento) => {											
+			container.innerHTML +=`
+			<div class="col ${elemento.type}">
+				<div class="d-flex text-center align-items-center flex-column p-2">
+					<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
+					<p>${elemento.name}</p>
+				</div>
+			</div>
+			`;
+		});
+	}
+	elseif(dato == "user")
+	{
+		userArr.forEach((elemento) => {											
+			container.innerHTML +=`
+			<div class="col ${elemento.type}">
+				<div class="d-flex text-center align-items-center flex-column p-2">
+					<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
+					<p>${elemento.name}</p>
+				</div>
+			</div>
+			`;
+		});
+	}
+	console.log(dato);
+	return;
+};
+
+//
