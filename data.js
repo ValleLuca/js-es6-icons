@@ -132,18 +132,15 @@ selezione.addEventListener("change", myfunction);						//Aggiunto addEventListen
 const animaliArr = icone.filter((element) =>  element.type == "animal");
 const vegetableArr = icone.filter((element) =>  element.type == "vegetable");
 const userArr = icone.filter((element) =>  element.type == "user");
-/*console.log(animaliArr.value);
-console.log(vegetableArr.type);
-console.log(userArr.type);*/
 
 
 
 function myfunction() {
 	let dato = selezione.value;
-	console.log(dato);
-	console.log(animaliArr.type);
+
 	if(dato == "animal")
 	{
+		container.innerHTML = "";
 		animaliArr.forEach((elemento) => {											
 			container.innerHTML +=`
 			<div class="col ${elemento.type}">
@@ -155,8 +152,9 @@ function myfunction() {
 			`;
 		});
 	}
-	elseif(dato == "vegetable")																		//questo maledetto di da sempre errore "Uncaught ReferenceError: elseif is not defined"
+	else if(dato == "vegetable")																		//questo maledetto di da sempre errore "Uncaught ReferenceError: elseif is not defined"
 	{
+		container.innerHTML = "";
 		vegetableArr.forEach((elemento) => {											
 			container.innerHTML +=`
 			<div class="col ${elemento.type}">
@@ -168,8 +166,9 @@ function myfunction() {
 			`;
 		});
 	}
-	elseif(dato == "user")
+	else if(dato == "user")
 	{
+		container.innerHTML = "";
 		userArr.forEach((elemento) => {											
 			container.innerHTML +=`
 			<div class="col ${elemento.type}">
@@ -181,7 +180,21 @@ function myfunction() {
 			`;
 		});
 	}
-	console.log(dato);
+	else
+	{
+		container.innerHTML = "";
+		icone.forEach((elemento) => {											//Stampa su dom box con icone colorate e testo
+			container.innerHTML +=`
+			<div class="col ${elemento.type}">
+				<div class="d-flex text-center align-items-center flex-column p-2">
+					<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
+					<p>${elemento.name}</p>
+				</div>
+			</div>
+			`;
+		});
+	}
+	
 	return;
 };
 
