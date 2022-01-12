@@ -113,9 +113,13 @@ const icone = [
 	}
 ];
 
-const selezione = document.getElementById("fxtipo").addEventListener("change", function(){
+const selezione = document.getElementById("fxtipo").addEventListener("change", myfunction);
+
+function myfunction() {
 	console.log(selezione);
-});
+};
+
+
 
 let container = document.getElementById("container-box");
 
