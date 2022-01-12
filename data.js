@@ -117,7 +117,7 @@ const selezione = document.getElementById("fxtipo").addEventListener("change", f
 	console.log(selezione);
 });
 
-let container = document.getElementsByClassName(".container");
+let container = document.getElementById("container-box");
 
 icone.forEach((elemento) => {
 	container.innerHTML +=`
