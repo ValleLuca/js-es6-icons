@@ -123,7 +123,7 @@ icone.forEach((elemento) => {
 	container.innerHTML +=`
 	<div class="col">
 		<div class="d-flex text-center align-items-center flex-column p-2">
-			<i class="fas fa-${elemento.name}" style:"color:${elemento.color}"></i>
+			<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
 			<p>${elemento.name}</p>
 		</div>
 	</div>
@@ -131,34 +131,5 @@ icone.forEach((elemento) => {
 });
 
 /*
-<div class="col">
-                <div class="d-flex text-center align-items-center flex-column p-2">
-                    <i class="da inserire"></i>
-                    <p>da inserire</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-flex text-center align-items-center flex-column p-2">
-                    <i class="da inserire"></i>
-                    <p>da inserire</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-flex text-center align-items-center flex-column p-2">
-                    <i class="da inserire"></i>
-                    <p>da inserire</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-flex text-center align-items-center flex-column p-2">
-                    <i class="da inserire"></i>
-                    <p>da inserire</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="d-flex text-center align-items-center flex-column p-2">
-                    <i class="da inserire"></i>
-                    <p>da inserire</p>
-                </div>
-            </div>
+
 */
