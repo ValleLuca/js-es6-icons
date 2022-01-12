@@ -121,7 +121,7 @@ let container = document.getElementById("container-box");
 
 icone.forEach((elemento) => {
 	container.innerHTML +=`
-	<div class="col">
+	<div class="col ${elemento.type}">
 		<div class="d-flex text-center align-items-center flex-column p-2">
 			<i class="fas fa-${elemento.name} fs-2" style="color: ${elemento.color}"></i>
 			<p>${elemento.name}</p>
