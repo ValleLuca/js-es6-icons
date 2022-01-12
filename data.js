@@ -116,9 +116,10 @@ const icone = [
 const selezione = document.getElementById("fxtipo");
 selezione.addEventListener("change", myfunction);
 
-let dato = selezione.value;
+
 
 function myfunction() {
+	let dato = selezione.value;
 	console.log(dato);
 };
 
